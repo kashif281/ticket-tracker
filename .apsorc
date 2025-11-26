@@ -1,0 +1,98 @@
+{
+  "entities": [
+    {
+      "name": "Ticket",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [
+        {
+          "name": "title",
+          "type": "varchar",
+          "nullable": false
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "status",
+          "type": "varchar",
+          "nullable": false
+        },
+        {
+          "name": "priority",
+          "type": "varchar",
+          "nullable": false
+        },
+        {
+          "name": "assignee",
+          "type": "varchar",
+          "nullable": false
+        }
+      ],
+      "indexes": [],
+      "uniques": []
+    },
+    {
+      "name": "Status",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [
+        {
+          "name": "name",
+          "type": "varchar",
+          "nullable": false
+        }
+      ],
+      "indexes": [],
+      "uniques": []
+    },
+    {
+      "name": "Priority",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [
+        {
+          "name": "level",
+          "type": "varchar",
+          "nullable": false
+        }
+      ],
+      "indexes": [],
+      "uniques": []
+    },
+    {
+      "name": "Assignee",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [
+        {
+          "name": "name",
+          "type": "varchar",
+          "nullable": false
+        }
+      ],
+      "indexes": [],
+      "uniques": []
+    }
+  ],
+  "relationships": [
+    {
+      "from": "Ticket",
+      "to": "Status",
+      "type": "ManyToOne"
+    },
+    {
+      "from": "Ticket",
+      "to": "Priority",
+      "type": "ManyToOne"
+    },
+    {
+      "from": "Ticket",
+      "to": "Assignee",
+      "type": "ManyToOne"
+    }
+  ],
+  "_removedEntities": []
+}
